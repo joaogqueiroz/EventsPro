@@ -1,0 +1,23 @@
+version: '3.8'
+
+volumes:
+  eventProDB:
+
+networks:
+  eventProNET:
+
+services:
+
+  sqlserver:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    container_name: eventProDB
+    ports:
+      - "1433:1433"
+    volumes:
+      - eventProDB:/var/lib/sqlserver
+    networks:
+      - eventProNET
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: numsey#2021
+      MSSQL_PID: EXPRESS

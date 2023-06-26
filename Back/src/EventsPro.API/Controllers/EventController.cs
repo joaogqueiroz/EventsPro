@@ -9,9 +9,9 @@ public class EventController : ControllerBase
 {
 
 
-    [HttpGet()]
-    public IEnumerable<Event> Get()
-    {
-        return new IEnumerable<Event>();
-    }
+    // [HttpGet()]
+    // public IEnumerable<Event> Get()
+    // {
+    //     return new IEnumerable<Event>();
+    // }
 }
