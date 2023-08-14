@@ -1,5 +1,5 @@
-using EventsPro.API.Data;
-using EventsPro.API.Models;
+using EventsPro.Persistence.Data;
+using EventsPro.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventsPro.API.Controllers;
@@ -9,9 +9,9 @@ namespace EventsPro.API.Controllers;
 public class EventsController : ControllerBase
 {
 
-    private readonly DataContext _dataContext;
+    private readonly EventsProContext _dataContext;
 
-    public EventsController(DataContext dataContext)
+    public EventsController(EventsProContext dataContext)
     {
         _dataContext = dataContext;
     }
