@@ -9,7 +9,7 @@ namespace EventsPro.Domain.Entities
         public string ImageURL { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public IEnumerable<SocialNetwork> SocialNetworks { get; set; }
-        public IEnumerable<SpeakerEvent> SpeakersEvents { get; set; }
+        public IEnumerable<SocialNetwork>? SocialNetworks { get; set; }
+        public IEnumerable<SpeakerEvent>? SpeakersEvents { get; set; }
     }
 }

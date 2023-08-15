@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 
-namespace EventsPro.Persistence.Data
+namespace EventsPro.Persistence.Context
 {
     public class EventsProContext : DbContext
     {
@@ -22,7 +22,16 @@ namespace EventsPro.Persistence.Data
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<SpeakerEvent>().HasKey(SE => new {SE.EventId, SE.SpeakerId});
+        modelBuilder.Entity<SpeakerEvent>().HasKey(se => new {se.EventId, se.SpeakerId});
+        modelBuilder.Entity<Event>()
+            .HasMany(e => e.SocialNetworks)
+            .WithOne(sn => sn.Event)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Speaker>()
+            .HasMany(e => e.SocialNetworks)
+            .WithOne(sn => sn.Speaker)
+            .OnDelete(DeleteBehavior.Cascade);
     }
     
     }
