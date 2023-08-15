@@ -1,4 +1,4 @@
-namespace EventsPro.API.Models.Base
+namespace EventsPro.Domain.Entities.Base
 {
     public class BaseEntity
     {
