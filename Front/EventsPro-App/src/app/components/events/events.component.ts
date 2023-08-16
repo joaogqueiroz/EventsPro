@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import {EventService} from './../Services/event.service';
-import { Event } from "../models/event";
+import {EventService} from '../../Services/event.service';
+import { Event } from "../../models/event";
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -52,7 +52,6 @@ export class EventsComponent implements OnInit {
 
   public showImage(): void {
     this.showImgState = !this.showImgState;
-    console.log(this.showImgState);
   }
 
   openModal(template: TemplateRef<any>) {
@@ -72,17 +71,14 @@ export class EventsComponent implements OnInit {
     this.EventService.getEvents().subscribe({
       next: (eventsResponse : Event[]) => {
         this.events = eventsResponse;
-        console.log(this.events);
         this.filtredEvents = this.events;
       },
       error: (error: any) => {
-        console.log(error);
         this.spinner.hide();
         this.toastrService.error('Error loading events','Error');
       },
       complete: () => {
         this.spinner.hide();
-        console.log(this.events)
       }
     });
   }
