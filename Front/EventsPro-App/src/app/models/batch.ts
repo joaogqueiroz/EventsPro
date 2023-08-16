@@ -2,11 +2,11 @@ import { BaseEntity } from "./base-entity";
 import { Event } from "./event";
 
 export interface Batch extends BaseEntity {
-    name: string | null;
+    name: string;
     price: number;
-    startDate: Date | null;
-    finishDate: Date | null;
+    startDate?: Date;
+    finishDate?: Date;
     amount: number;
     eventId: number;
-    event: Event | null;
+    event: Event;
 }

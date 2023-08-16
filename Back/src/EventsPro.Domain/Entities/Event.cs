@@ -8,7 +8,6 @@ namespace EventsPro.Domain.Entities
         public DateTime? EventDate { get; set; }        
         public string? Theme  { get; set; }        
         public int TotalPeople  { get; set; }        
-        public string? TicketLot  { get; set; }        
         public string? UrlImage  { get; set; }        
         public string? Phone  { get; set; }        
         public string? Email  { get; set; }        

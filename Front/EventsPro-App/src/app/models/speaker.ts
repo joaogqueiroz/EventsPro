@@ -1,6 +1,6 @@
 import { BaseEntity } from "./base-entity";
 import { SocialNetwork } from "./social-network";
-import { SpeakerEvent } from "./speaker-event";
+import { Event } from "./event";
 
 export interface Speaker extends BaseEntity {
     name: string;
@@ -8,6 +8,6 @@ export interface Speaker extends BaseEntity {
     imageURL: string;
     phone: string;
     email: string;
-    socialNetworks: SocialNetwork[] | null;
-    speakersEvents: SpeakerEvent[] | null;
+    socialNetworks: SocialNetwork[];
+    speakersEvents: Event[];
 }

@@ -1,18 +1,17 @@
 import { BaseEntity } from "./base-entity";
 import { Batch } from "./batch";
 import { SocialNetwork } from "./social-network";
-import { SpeakerEvent } from "./speaker-event";
+import { Speaker } from "./speaker";
 
 export interface Event extends BaseEntity {
-    place: string | null;
-    eventDate: Date | null;
-    theme: string | null;
+    place: string;
+    eventDate: Date;
+    theme: string;
     totalPeople: number;
-    ticketLot: string | null;
-    urlImage: string | null;
-    phone: string | null;
-    email: string | null;
-    batches: Batch[] | null;
-    socialNetworks: SocialNetwork[] | null;
-    speakersEvents: SpeakerEvent[] | null;
+    urlImage: string;
+    phone: string;
+    email: string;
+    batches: Batch[];
+    socialNetworks: SocialNetwork[];
+    speakersEvents: Speaker[];
 }
