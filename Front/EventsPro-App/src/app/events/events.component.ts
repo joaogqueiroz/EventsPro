@@ -52,6 +52,7 @@ export class EventsComponent implements OnInit {
 
   public showImage(): void {
     this.showImgState = !this.showImgState;
+    console.log(this.showImgState);
   }
 
   openModal(template: TemplateRef<any>) {
@@ -81,6 +82,7 @@ export class EventsComponent implements OnInit {
       },
       complete: () => {
         this.spinner.hide();
+        console.log(this.events)
       }
     });
   }
