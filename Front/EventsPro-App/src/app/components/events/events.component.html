@@ -1,0 +1,86 @@
+<app-title [title]="'Events'"></app-title>
+
+<div action="" class="form-inline">
+  <div class="form-group mb-2">
+    <label class="mr-2">Filter: </label>
+    <input
+      type="text"
+      class="form-control mr-2"
+      placeholder="search"
+      [(ngModel)]="filterList"
+    />
+  </div>
+</div>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>
+        <button
+          type="button"
+          class="btn btn-outline-light btn-sm"
+          (click)="showImage()"
+        >
+          <i class="{{ !showImgState ? 'fa fa-eye' : 'fa fa-eye-slash' }}"></i>
+          {{ !showImgState ? "Show" : "Hide" }}
+        </button>
+      </th>
+      <th>#</th>
+      <th>Theme</th>
+      <th>Place</th>
+      <th>Date</th>
+      <th>Total People</th>
+      <th>Ticket Batch</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="events && events.length">
+    <tr *ngFor="let event of filtredEvents">
+      <td>
+        <img
+          [collapse]="!showImgState"
+          [isAnimated]="true"
+          src="/assets/{{ event.urlImage }}"
+          alt=""
+          [style.width.px]="widthImg"
+          [style.margin.px]="marginImg"
+        />
+      </td>
+      <td>{{ event.id }}</td>
+      <td>{{ event.theme }}</td>
+      <td>{{ event.place }}</td>
+      <td>{{ event.eventDate | DateTimePipe }}</td>
+      <td>{{ event.totalPeople }}</td>
+      <td>{{ event.batches[0]?.name | uppercase }}</td>
+      <td>
+        <div class="btn-group">
+          <button
+            type="button"
+            class="btn btn-primary btn-sm mr-2"
+            tooltip="Edit"
+          >
+            <i class="fa fa-edit"></i>
+          </button>
+          <button type="button" class="btn btn-danger btn-sm" tooltip="Delete" (click)="openModal(template)">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot *ngIf="!events.length">
+    <tr>
+      <td colspan="8" class="text-center">
+        <h4>Events not found</h4>
+      </td>
+    </tr>
+  </tfoot>
+</table>
+
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to delete this event ?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Yes</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
+  </div>
+</ng-template>
