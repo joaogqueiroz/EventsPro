@@ -27,17 +27,27 @@ import { TitleComponent } from './shared/title/title.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { EventListComponent } from './components/events/event-list/event-list.component';
+import { EventDetailComponent } from './components/events/event-detail/event-detail.component';
+import { UserComponent } from './components/user/user.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { RegistrationComponent } from './components/user/registration/registration.component';
 
 @NgModule({
   declarations: [				
     AppComponent,
       EventsComponent,
+      EventListComponent,
+      EventDetailComponent,
       SpeakersComponent,
       ContactsComponent,
       DashboardComponent,
       ProfileComponent,
       NavComponent,
       TitleComponent,
+      UserComponent,
+      LoginComponent,
+      RegistrationComponent,
       DateTimeFormatPipe
    ],
   imports: [
