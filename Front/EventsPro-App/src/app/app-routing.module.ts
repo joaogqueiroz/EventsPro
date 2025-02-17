@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EventsComponent } from './components/events/events.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SpeakersComponent } from './components/speakers/speakers.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { EventDetailComponent } from './components/events/event-detail/event-detail.component';
 import { EventListComponent } from './components/events/event-list/event-list.component';
@@ -23,15 +23,16 @@ const routes: Routes = [
       { path: 'list', component: EventListComponent },
     ]
   },
+  { path: 'user/profile', component: ProfileComponent },
   {
-    path: 'user', component: UserComponent, children: [
+    path: 'user', component: UserComponent, 
+    children: [
       { path: 'login', component: LoginComponent },
       { path: 'registration', component: RegistrationComponent },
     ]
   },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'speakers', component: SpeakersComponent },
-  { path: 'profile', component: ProfileComponent },
   { path: 'contacts', component: ContactsComponent },
 
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
