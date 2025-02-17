@@ -14,23 +14,28 @@ import { RegistrationComponent } from './components/user/registration/registrati
 
 
 const routes: Routes = [
-  { path: 'events' , redirectTo: 'events/list'},
-  {path:'events', component: EventsComponent, children: [
-    {path:'detail/:id', component: EventDetailComponent},
-    {path:'detail', component: EventDetailComponent},
-    {path:'list', component: EventListComponent},
-  ]},
-  {path:'user', component: UserComponent, children: [
-    {path:'login', component: LoginComponent},
-    {path:'registration', component: RegistrationComponent},
-  ]},
-  {path:'dashboard', component: DashboardComponent},
-  {path:'speakers', component: SpeakersComponent},
-  {path:'profile', component: ProfileComponent},
-  {path:'contacts', component: ContactsComponent},
-  
-  {path:'', redirectTo: 'dashboard', pathMatch: 'full'},
-  {path:'**', redirectTo: 'dashboard', pathMatch: 'full'},
+  { path: 'events', redirectTo: 'events/list' },
+  {
+    path: 'events', component: EventsComponent, 
+    children: [
+      { path: 'detail/:id', component: EventDetailComponent },
+      { path: 'detail', component: EventDetailComponent },
+      { path: 'list', component: EventListComponent },
+    ]
+  },
+  {
+    path: 'user', component: UserComponent, children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'registration', component: RegistrationComponent },
+    ]
+  },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'speakers', component: SpeakersComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'contacts', component: ContactsComponent },
+
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '**', redirectTo: 'dashboard', pathMatch: 'full' },
 ];
 
 @NgModule({

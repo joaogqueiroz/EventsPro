@@ -498,4 +498,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+<<<<<<< HEAD
 Front/EventsPro-App/.angular/cache
+=======
+Front/EventsPro-App/.angular/cache
+>>>>>>> 0bb5f3a4426ce1b39880a013556d764ad5651996
